@@ -188,7 +188,7 @@ jobs:
         include:
           - platform: x86_64
             url_sdk: https://downloads.openwrt.org/releases/22.03.3/targets/x86/64/openwrt-sdk-22.03.3-x86-64_gcc-11.2.0_musl.Linux-x86_64.tar.xz
-
+          
     steps:
       - name: Initialization ${{ matrix.platform }} compile environment
         run: |
@@ -230,7 +230,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-passwall=m" >> .config
           echo "CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=y" >> .config
-          echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y" >> .config
@@ -264,8 +264,8 @@ jobs:
         id: compile
         run: |
           cd sdk
-          #make package/luci-app-passwall/{clean,compile} -j$(nproc)
-          make package/luci-app-passwall/{clean,compile} -j1 V=s
+          make package/luci-app-passwall/{clean,compile} -j$(nproc)
+          #make package/luci-app-passwall/{clean,compile} -j1 V=s
 
           echo "status=success" >> $GITHUB_OUTPUT
 
