@@ -82,10 +82,6 @@ jobs:
           - sdk_ver: 22.03
             luci_ver: 22.03
             sdk_url: https://downloads.openwrt.org/releases/22.03.3/targets/x86/64/openwrt-sdk-22.03.3-x86-64_gcc-11.2.0_musl.Linux-x86_64.tar.xz
-
-          - sdk_ver: 23.05
-            luci_ver: 23.05
-            sdk_url: https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/openwrt-sdk-23.05.0-x86-64_gcc-12.3.0_musl.Linux-x86_64.tar.xz
     steps:
       - name: Install packages
         run: |
