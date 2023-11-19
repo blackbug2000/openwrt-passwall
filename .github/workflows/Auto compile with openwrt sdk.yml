@@ -19,7 +19,7 @@ on:
 env:
   TZ: Asia/Shanghai
   passwall: ${{ github.repository }}
-  packages: blackbug2000/openwrt-passwall-packages
+  packages: xiaorouji/openwrt-passwall-packages
 
 
 jobs:
